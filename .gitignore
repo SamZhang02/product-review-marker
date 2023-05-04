@@ -3,3 +3,5 @@
 .env
 data/data.csv
 src/__pycache__
+out/result.csv
+
