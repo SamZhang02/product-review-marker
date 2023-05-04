@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "product-review-rater"
+version = "0.1.0"
+description = ""
+authors = ["SamZhang02 <sam.zijing.zhang@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+packages = [{include = "product_review_rater"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+openai = "^0.27.6"
+pandas = "^2.0.1"
+yapf = "^0.33.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
