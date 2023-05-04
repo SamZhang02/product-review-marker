@@ -13,11 +13,3 @@ class Extractor:
         return list(map(lambda x: Product(x), raw_data.values))
       else:
         raise ValueError(f'Invalid data type, the datatype must be {self.DATATYPE}')
-
-if __name__ == "__main__":
-  extractor = Extractor()
-  products = extractor.extract_data('data/data.csv')
-  print(len(products))
-  print(products[0].ratings)
-  # print('\n'.join(list(map(lambda x: x.reviewText, products))))
-

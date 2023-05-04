@@ -32,8 +32,3 @@ class Product:
       self.reviewTime]))) \
       + '\nRatings:\n' \
       + '\n'.join([f'{criteria}: {rating}' for criteria,rating in self.ratings.items()])
-
-if __name__ == "__main__":
-  test_data = r"""AHMEG9CAAT2KF,B0002CZVWS,Bon,"[0, 0]","I've only been playing ukulele for about 3 years, so I'm new to using a capo.  It seems to hold tight.",4,I'm new to a capo,1380844800,"10 4, 2013","""
-  processed_data = test_data.split(',')
-
