@@ -23,15 +23,21 @@ data/criteria.json
 
 ## Usage
 Make a `.env` file according to `.env.example`
+Install dependencies with
+```
+poetry install
+```
+or
+```
+just install
+```
+
 Run with
 ```
 poetry run main.py
 ```
-or if you have `just`
+or
 ```
 just main
 ```
-or 
-```
-just run main.py
-```
+
