@@ -22,6 +22,8 @@ data/criteria.json
 ```
 
 ## Usage
+This project uses `poetry` to manage dependencies.
+
 Make a `.env` file according to `.env.example`
 Install dependencies with
 ```
