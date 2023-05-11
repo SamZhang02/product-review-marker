@@ -4,33 +4,16 @@ from extractor import Extractor
 from rater import Rater
 from multiprocessing import Pool
 import time
+import json
 
-FILEPATH = os.path.join('data','data.csv')
+FILEPATH = os.path.join('data','data.example.csv')
 OUTPATH = os.path.join('out','result.csv')
-PRODUCT_LABELS = ['reviewerID',
-                  'asin',
-                  'reviewerName',
-                  'helpful',
-                  'reviewText',
-                  'overall',
-                  'summary',
-                  'unixReviewTime',
-                  'reviewTime']
 
-RATING_CRITERIAS = ["Product quality",
-                  "Difficulty using the product",
-                  "Affordability",
-                  "Cable / accessories quality",
-                  "Sound quality",
-                  "On-time delivery",
-                  "Ease to return product",
-                  "Returning customer satisfaction",
-                  "Product appearance",
-                  "Ease to reach customer service",
-                  "Will purchase again",
-                  "Adjustability",
-                  "Good quality for the price",
-                  "Package integrity"]
+with open(FILEPATH,'r') as data:
+  PRODUCT_LABELS = data.readline().strip().split(',')
+
+with open(os.path.join('data','criterias.json'),'r') as criterias:
+  RATING_CRITERIAS = json.load(criterias)
 
 def main():
   extractor = Extractor()
@@ -48,10 +31,10 @@ def main():
 
   print(f'Finished benchmarking {len(products)} reviews in {t1-t0} seconds')
 
-  result  = defaultdict(list)
+  result = defaultdict(list)
   for rating in ratings:
     for k,v in rating.items():
-      result[k] = v
+      result[str(k)] = v
 
   print(f'Writing result to {OUTPATH}')
   with open(FILEPATH,"r") as fobj:
