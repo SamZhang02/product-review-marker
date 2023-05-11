@@ -8,8 +8,5 @@ class Extractor:
       return pd.read_csv(filepath)
 
   def extract_data(self, filepath:str) -> list[Product]:
-      if self.DATATYPE == 'csv':
-        raw_data = self._extract_csv(filepath)
-        return list(map(lambda x: Product(x), raw_data.values))
-      else:
-        raise ValueError(f'Invalid data type, the datatype must be {self.DATATYPE}')
+      raw_data = self._extract_csv(filepath)
+      return list(map(lambda x: Product(x), raw_data.values))
