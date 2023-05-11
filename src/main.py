@@ -6,7 +6,7 @@ from multiprocessing import Pool
 import time
 import json
 
-FILEPATH = os.path.join('data','data.example.csv')
+FILEPATH = os.path.join('data','data.csv')
 OUTPATH = os.path.join('out','result.csv')
 
 with open(FILEPATH,'r') as data:
